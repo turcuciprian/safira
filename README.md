@@ -1,6 +1,6 @@
 <h3>Safira - Free Ghost Theme</h3>
 
-<img src="https://raw.github.com/turcuciprian/safira/master/demo_images/01_preview.jpg" alt="Safira preview" />
+<img src="https://raw.github.com/turcuciprian/safira/master/demo_images/01_preview.png" alt="Safira preview" />
 <br/>
 Safira is a very simple ghost blog theme. It is fully responsive and based on bootstrap 3 for it's main grid. Looks great on tablets and mobile phones. It has all the ghost 
 necessary styles, for paragraphs, lists, images, text inputs, hr's quotes, and code commenting. The user is highlighted on the home page for each post or on the post page at the bottom of the content. 
