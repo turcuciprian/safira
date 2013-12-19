@@ -1,0 +1,484 @@
+// Main less variables
+@font: 'Roboto', sans-serif;
+//main colors
+@greyDark: #232323;
+@greyDark2: #2d2d2d;
+@greyDark3: #575757;
+@greyMedium: #919191;
+@greyMedium2: #9e9e9e;
+@greyLight: #e8e8e8;
+@greyLight2: #989898;
+@greyLight3: #c0c0c0;
+//red
+@red: #ef6e6e;
+/****************************
+//
+//general less functions
+//
+****************************/
+/*dynamic rounded border*/
+.border_radius(@var:5px){
+    -webkit-border-radius: @var;
+    -moz-border-radius: @var;
+    border-radius: @var;
+}
+/*the top ronded border radius*/
+.header_border_radius{
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+/*the footer rounded border radius*/
+.content_border_radius{ 
+    -webkit-border-bottom-right-radius: 5px;
+    -webkit-border-bottom-left-radius: 5px;
+    -moz-border-radius-bottomright: 5px;
+    -moz-border-radius-bottomleft: 5px;
+    border-bottom-right-radius: 5px;
+    border-bottom-left-radius: 5px;
+}
+//The main content shadow
+.content_shadow{
+    -webkit-box-shadow: 0px 1px 1px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow:    0px 1px 1px rgba(50, 50, 50, 0.75);
+    box-shadow:         0px 1px 1px rgba(50, 50, 50, 0.75);
+}
+/* ****************************************
+//
+//main tags
+//
+**************************************** */
+/*Header Tags*/
+h2,h3,h4,h5{
+    font-weight: 700;
+    font-family: @font;
+}
+/*Main general tags*/
+html, body{
+    font-family: @font;
+    background: @greyLight;
+}
+/*links*/
+a{
+    color:@red;
+    &:hover{
+        color:@red;
+    }
+}
+/*Lists*/
+ul{
+    padding:0px 0 0 35px;
+    margin:5px 0;
+    li{
+        padding:3px 0;
+        list-style: none;
+
+        display:block;
+        &:before{
+            margin-right:10px;
+            font-family: FontAwesome;
+            padding:0px;
+            content:'\f068';
+        }
+    }
+}
+/*Unordered lists*/
+ol{
+    padding:0px 0 0 15px;
+    margin:10px 0;
+    list-style-position:inside;
+    li{
+        padding:3px 0;  
+    }
+}
+/*images*/
+img{
+    max-width: 100%;
+    border:1px solid @greyLight;
+    padding:2px;
+}
+/*paragraph*/
+p{
+    margin-top: 20px;
+    font-weight: 100;
+    font-size:16px;
+    color:@greyDark2;
+    line-height: 26px;
+}
+/*quote*/
+blockquote{
+    font-size:14px;
+    margin:20px 0;
+    border:0px solid red;
+    background:@greyLight;
+    p{
+        color:@greyDark3;
+        padding:20px;
+        margin:0px;
+        font-weight:700;
+        border-left:0px solid red;
+    }
+}
+/*textbox*/
+input{
+    .border_radius(5px); 
+    border:1px solid @greyMedium2;
+    padding:5px;
+    background:#FFF;
+    margin:10px;
+    min-width:100%;
+    color:@greyMedium2;
+}
+/*main tags*/
+header{
+    .col-lg-8{
+        .content_shadow;
+        margin-top:30px;
+        .header_border_radius;
+        padding:0px;
+        /*Header blog cover*/
+        img{
+            .header_border_radius;
+            width:auto;
+            max-width: 100%;
+            margin:0px;
+            border:0px solid red;
+            padding:0px;
+        }
+        /*Blog description*/
+        .description{
+            font-weight:100;
+            text-align: center;
+            font-size: 16px;
+            color:#FFF;
+            padding:15px 0;
+            margin-top:-50px;
+            width:100%;
+            background:rgba(0, 0, 0, 0.5);
+            position: absolute;
+            height:51px;
+            &.nomargin{
+                margin:0px;
+                position:relative;
+            }
+        }
+    }
+}
+/*main section*/
+section{
+    /*section content*/
+    &.content{
+        background: @greyLight;
+        .col-lg-8{
+            padding:0px;
+            padding-bottom:1px;
+            background:#FFF;
+            .content_shadow;
+            /*the logo*/
+            .logo{
+                margin:41px 0 68px 0;
+                font-size:30px;
+                font-weight: 100;
+                color:@greyDark; 
+                padding:15px 12px;
+                border:1px solid @greyMedium;
+                .border_radius(5px);
+                display: inline-block;
+                img{
+                    margin-top:-8px;
+                    border:0px solid red;
+                }
+            }
+            /*main post container*/
+            .post{
+                padding:0 40px 25px 40px;
+                margin-bottom:53px;
+                border-bottom:1px dashed @greyDark;
+                /*date tag*/
+                .date{
+                    font-size:16px;
+                    font-weight: 100;
+                    padding:10px 20px;
+                    color:#FFF;
+                    background:@red;
+                    .border_radius();
+                    display:inline-block;
+                }
+                /*Title tag*/
+                h2{
+                    a{
+                        color:@greyDark2;
+                        font-weight: 700;
+                        font-size: 36px;
+                        line-height: 42px;
+                        &:hover{
+                            color:@red;
+                            text-decoration: none;
+                        }
+                    }
+                }
+                /*subtitle (tags)*/
+                .subtitle{
+                    color:@greyLight2;
+                    text-transform: uppercase;
+                    font-weight: 300;
+                }
+                /*Author and read more*/
+                .extra{
+                    width:100%;
+                    margin-top:25px;
+                    height:45px;
+                    .author{
+                        float:left;
+                        text-align:left;
+                        img{
+                            width:45px;
+                            height:45px;
+                            .border_radius(45px);
+                            border:1px solid @greyMedium2;
+                            margin-right:7px;
+                        }
+                    }
+                    .more{
+                        float:right;
+                        text-align:right;
+                        margin-top:11px;
+                        a{
+                            font-weight: 700;
+                            font-size: 14px;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+    /*The edge to edge ribbon background bar*/
+    &.navigation_bg{
+        height:65px;
+        background:@greyDark;
+        overflow: hidden;
+        border-bottom:2px solid #000;
+        hr{
+            &.top{
+                margin-top:2px;
+                border-top: 1px dashed @greyDark3;
+            }
+            &.bottom{
+                margin-top:59px;
+                border-top: 1px solid #FFF;
+            }
+        }
+    }
+}
+/*the footer section*/
+footer{
+    margin-top:-65px;
+    .col-lg-8{
+        .content_shadow;
+        background:#FFF;
+        margin-bottom:30px;
+        .content_border_radius;
+        font-weight: 700;
+        color:@greyDark3;
+        font-size: 14px;
+        padding:20px 0;
+        /*The navigation*/
+        &.navigation_container{
+            margin-top:-10px;
+            padding:0px;
+            overflow: hidden;
+            margin-bottom:0px;
+            -webkit-border-radius: 0px;
+            -moz-border-radius: 0px;
+            border-radius: 0px;
+
+            height:65px;
+            background:@greyDark;
+            overflow: hidden;
+            border-bottom:2px solid #000;
+            hr{
+                &.top{
+                    margin:2px 0 0 0;
+                    border-top: 1px dashed @greyDark3;
+                }
+                &.bottom{
+                    margin:0;
+                    border-top: 1px solid #FFF;
+                }
+            }
+            /*The center box content*/
+            .box{
+                height:48px;
+                margin-top:11px;
+                .social{
+                    float:left;
+                    margin-top:11px;
+                    i{
+                        font-size:18px;
+                        color:@greyLight3;
+                        margin-left:18px;
+                    }
+                    a{
+                        &:hover{
+                            text-decoration:none;
+                            i{
+                                color:@red;
+                            }
+                        }
+                    }
+                }
+                /*The navigation containers*/
+                .nav{
+                    display:inline-flex;
+                    float:right;
+                    margin:0 40px 0 0;
+                    font-size:14px;
+                    color:#FFF;
+                    font-weight:100;
+                    a{
+                        text-align: center;
+                        width:37px;
+                        height:37px;
+                        display:inline;
+                        margin-left:1px;
+                        padding:10px;
+                        background:#FFF;
+                        float:left;
+                        &:hover{
+                            text-decoration: none;
+                            background:@red;
+                            i{
+                                color:#FFF;
+                            }
+                        }
+                        i{
+                            margin:0px;
+                        }
+                    }
+                    span{
+                        float:left;
+                        margin:10px 21px 0 0;
+                    }
+                    &:after,&:before{
+                        display:block;
+                    }
+                }
+            }
+        }
+    }
+}
+/*The body tag - For page classes*/
+body{
+    &.post-template{
+        section{
+            &.content{
+                .col-lg-8{
+                    .header_border_radius;
+                    margin-top:30px;
+                    .logo{
+                        a{
+                            color:@greyDark;
+                            &:hover{
+                                color:@red;
+                                text-decoration: none;
+                            }
+                        }
+                    }
+                    .post{
+                        .extra{
+                            .author{
+                                float:none;
+                                text-align: center;
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+        footer{
+            .container{
+                .col-lg-8{
+                    .box{
+                        margin-top:17px;
+                        height:42px;
+                        .social{
+                            float:none;
+                            text-align:center;
+                            a{
+                                i{
+                                    font-size:26px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+/*a little above iphone portratit and under*/
+@media (max-width: 330px) {
+    section{
+        &.content{
+            .col-lg-8{
+                .post{
+                    .extra{
+                        .author{
+                            text-align: center;
+                            a{
+                                display:block;
+                            }
+                        }
+                        .more{
+                            margin-top:20px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    body{
+        &.post-template{
+            section{
+                &.content{
+                    .col-lg-8{
+                        .post{
+                            .extra{
+                                .author{
+                                    text-align: left;
+                                    a{
+                                        display:inline;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    footer{
+        .col-lg-8{
+            &.navigation_container{
+                .box{
+                    .social{
+                        i{
+                            margin-left:9px;
+                        }
+                    }
+                    .nav{
+                        margin:0 10px 0 0;
+                        span{
+                            margin:10px 10px 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+}

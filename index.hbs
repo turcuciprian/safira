@@ -1,0 +1,62 @@
+{{!< default}}
+
+{{! The comment above "< default" means - insert everything in this file into
+    the {body} of the default.hbs template, which contains our header/footer. }}
+
+{{! The big featured header on the homepage, with the site logo and description }}
+<!--header parallax section start-->
+<header>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        {{#if @blog.cover}}<img src="{{@blog.cover}}" alt="" />{{else}}{{/if}}
+                        <div class="description{{#if @blog.cover}}{{else}} nomargin{{/if}}">
+                            {{@blog.description}}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+{{! The main content area on the homepage }}
+<!--header parallax section end-->
+        <!--content container section start-->
+
+
+
+
+<section class="content">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2 text-center">
+                        <div class="logo">
+                            <img src="{{@blog.logo}}" alt="" />
+                            {{@blog.title}}
+                        </div>
+{{#foreach posts}}
+                        <!--post start-->
+                        <div class="post">
+                            <div class="date">{{date format="DD MMM"}}</div>
+                            <h2><a href="{{url}}">{{{title}}}</a></h2>
+                            <div class="subtitle">
+                                {{#if tags}}{{tags}}{{/if}}
+                            </div>
+                            <p>
+                                {{excerpt}}
+                            </p>
+                            <div class="extra">
+                                <div class="author">
+                                    {{#if author.image}}<img src="{{author.image}}" alt="" />{{/if}}
+                                    <a href="{{author.website}}">{{author.name}}</a>
+                                </div>
+                                <div class="more">
+                                    <a href="{{url}}">Read More ></a>
+                                </div>
+                            </div>
+                        </div>
+                        <!--post end-->
+{{/foreach}}
+                    </div>
+                </div>
+            </div>
+        </section>
+    {{!! After all the posts, we have the previous/next pagination links }}
